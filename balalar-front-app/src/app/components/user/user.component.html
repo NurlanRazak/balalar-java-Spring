@@ -1,0 +1,28 @@
+
+<div *ngIf="info.token; else loggedOut">
+        <h5 class="text-primary">Your Information</h5>
+        <p>
+          <strong>Username:</strong> {{info.username}}<br/>
+          <strong>Roles:</strong> {{info.authorities}}<br />
+          <strong>Token:</strong> {{info.token}}.
+        </p>
+        <img src="assets/img/podcast-featured.jpg" alt="Girl in a jacket" width="700" height="400">
+<div   style = "position:relative; left:300px; top:30px; ">
+<a class="btn" routerLink="/podcast/create">Create Podcast</a>
+<button class="btn" type="submit" routerLink="/podcastlist">List of podcasts</button>
+
+</div>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+      </div>
+     
+
+
+
+      <ng-template #loggedOut>
+        Please login.
+      </ng-template>
+ <br/>
+ <br/>
+ <br/>
+
+

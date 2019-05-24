@@ -1,0 +1,48 @@
+<div *ngIf="info.token; else loggedOut">
+        <h5 class="text-primary">Your Information</h5>
+        <p>
+          <strong>Username:</strong> {{info.username}}<br/>
+          <strong>Roles:</strong> {{info.authorities}}<br />
+          <strong>Token:</strong> {{info.token}}.
+        </p>
+
+        <img src="assets/img/blogger.jpg" alt="blogger" width="500" height="400" align="left">
+
+        <div style = "position:relative; right:450px; top:400px;">
+        <a class="btn" routerLink="/podcast/create">Write a Blog</a>
+        <button class="btn" type="submit" routerLink="/admin/crud">List of blogs</button>
+        </div>
+        
+        
+        <img src="assets/img/earth.jpg" alt="earth" width="500" height="400" align="right">
+        <div   style = "position:relative; left:700px; top:70px; ">
+        <a class="btn" routerLink="/news/create">Write a News</a>
+        <button class="btn" type="submit" routerLink="/newslist">List of news</button>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+      
+      
+      </div>
+       
+      
+      <ng-template #loggedOut>
+        Please login.
+      </ng-template>
+
+      <br/>
+      <br/>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+

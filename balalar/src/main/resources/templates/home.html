@@ -1,0 +1,136 @@
+<!-- tag::all[] -->
+<!-- tag::head[] -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kids learning web-site</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+    <nav>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+        </label>
+        <div class="logo">
+            <a href="/main">Balalar</a>
+        </div>
+        <div class="nav-wrapper">
+            <ul>
+                <li><a href="/main">Main</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/buys/current">Design</a></li>
+                <li><a href="/third">Our Goal</a></li>
+            </ul>
+            <form method="POST" th:action="@{/logout}">
+                <input type="submit" value="Logout"/>
+            </form>
+        </div>
+    </nav>
+</div>
+
+
+
+<!--&lt;!&ndash; tag::formTag[] &ndash;&gt;-->
+<form method="POST" th:object="${home}">
+    <!--&lt;!&ndash; end::all[] &ndash;&gt;-->
+
+    <!--<span class="validationError"-->
+          <!--th:if="${#fields.hasErrors('contents')}"-->
+          <!--th:errors="*{contents}">Ingredient Error</span>-->
+
+<div class="cont">
+
+
+
+    <!-- tag::all[] -->
+    <div class="grid">
+        <!-- end::formTag[] -->
+        <!-- end::head[] -->
+
+
+        <div class="content-group" id="entertaiments">
+            <!-- tag::designateWrap[] -->
+            <h1>Educate yourself!</h1>
+            <h3>Choose your content:</h3>
+            <div th:each="content : ${entertaiment}">
+                <input name="contents" type="checkbox" th:value="${content.id}" />
+                <span th:text="${content.name}">Content</span><br/>
+            </div>
+            <!-- end::designateWrap[] -->
+        </div>
+
+        <div class="content-group" id="beginners">
+            <!--<h3>Pick your beginner content:</h3>-->
+            <div th:each="content : ${beginner}">
+                <input name="contents" type="checkbox" th:value="${content.id}" />
+                <span th:text="${content.name}">Content</span><br/>
+            </div>
+        </div>
+
+        <div class="content-group" id="middles">
+            <!--<h3>Choose your middle content:</h3>-->
+            <div th:each="content : ${middle}">
+                <input name="contents" type="checkbox" th:value="${content.id}" />
+                <span th:text="${content.name"/buys/current"}">Content</span><br/>
+            </div>
+        </div>
+
+        <!--<div class="content-group" id="youngs">-->
+            <!--&lt;!&ndash;<h3>Determine your young content:</h3>&ndash;&gt;-->
+            <!--<div th:each="content : ${young}">-->
+                <!--<input name="contents" type="checkbox" th:value="${content.id_child}" />-->
+                <!--<span th:text="${content.nameofchild}">Content</span><br/>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="content-group" id="adults">-->
+            <!--<div th:each="content : ${adult}">-->
+                <!--<input name="contents" type="checkbox" th:value="${content.id_child}" />-->
+                <!--<span th:text="${content.nameofchild}">Content</span><br/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+
+
+    <div>
+        <h3>Enter your author name :</h3>
+        <input type="text" th:field="*{name}"/>
+        <!-- end::all[] -->
+        <span th:text="${#fields.hasErrors('name')}">XXX</span>
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">Name Error</span>
+        <!-- tag::all[] -->
+        <br/>
+
+        <button>Submit</button>
+    </div>
+    <!-- tag::closeFormTag[] -->
+</form>
+<!--<form method="POST"-->
+      <!--th:action="@{/third}" th:object="${content}" >-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<td><label path="age">Enter the content name you want to buy</label></td>-->
+            <!--<td><input path="age"/></td>-->
+        <!--</tr>-->
+
+        <!--<tr>-->
+            <!--<td><input type="submit" value="Submit"/></td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</form>-->
+
+</div>
+ <!--end::closeFormTag[]-->
+</body>
+</html>
+<!-- end::all[] -->

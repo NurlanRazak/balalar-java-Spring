@@ -1,0 +1,25 @@
+
+<div class="container">
+
+  <table class="table table-striped">
+      <thead>
+          <th>Id</th>
+          <th>Placed At</th>
+          <th>Name</th>
+          <th>Link to video on Youtube</th>
+          <th>Operations </th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let podcast of podcasts">
+              <td>{{podcast.id}}</td>
+              <td>{{podcast.placedAt}}</td>
+              <td>{{podcast.name}}</td>
+              <td>{{podcast.linkvideo}}</td>
+              <td><button class="btn btn-danger" (click)="deletePodcast(podcast)">Delete</button>
+                  <button class="btn btn-primary" (click)="updatePodcast(podcast)">Edit</button></td>
+
+          </tr>
+      </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="newPodcast()">New Podcast</button>
+</div>

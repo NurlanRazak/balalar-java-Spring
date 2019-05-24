@@ -1,0 +1,30 @@
+<div class="container">
+
+    <form (ngSubmit)="processForm()">
+   <div class="form group">
+      <label for="name">Name</label>
+<input type="text" name="name" class="form-control" [(ngModel)]="user.name">
+</div>
+<div class="form group">
+    <label for="conte">Content</label>
+<input type="text" name="conte" class="form-control" [(ngModel)]="user.conte">
+</div>
+<div class="form group">
+    <label for="summary">Summary</label>
+<input type="text" name="summary" class="form-control" [(ngModel)]="user.summary">
+</div>
+<div class="form group">
+    <label for="ccNumber">Credit Card Number</label>
+<input type="text" name="ccNumber" class="form-control" [(ngModel)]="user.ccNumber">
+</div>
+<div class="form group">
+    <label for="ccExpiration">Credit Card ccExpiration</label>
+<input type="text" name="ccExpiration" class="form-control" [(ngModel)]="user.ccExpiration">
+</div>
+<div class="form group">
+    <label for="ccCVV">Credit Card CVV</label>
+<input type="text" name="ccCVV" class="form-control" [(ngModel)]="user.ccCVV">
+</div>
+          <input type="submit" value="save" class="btn btn-success">
+    </form>
+</div>

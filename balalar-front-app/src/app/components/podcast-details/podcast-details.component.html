@@ -1,0 +1,55 @@
+<app-header></app-header>
+	<!-- Banner Area Start -->
+  <div class="banner-area-wrapper">
+    <div class="banner-area text-center">	
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>Podcast details</h2> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+<!-- Banner Area End -->
+<!-- Event Details Start -->
+<div class="event-details-area blog-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="event-details">
+                    <div class="event-details-content">
+                        <h2>{{data.title}}</h2>
+                        <ul>
+                            <li><span>time : </span>{{data.placedAt}}</li>
+                            
+                        </ul>
+                        <iframe width="700" height="400" [src]="data.linkvideo | safe"></iframe>
+                        <!-- <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
+                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem </p>
+                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p> -->
+                        <div class="speakers-area fix"> 
+                            
+                            <div class="single-speaker">
+                
+                                <div class="speaker-name">
+                                    <h5>{{data.name}}</h5>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>    
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+<app-footer></app-footer>

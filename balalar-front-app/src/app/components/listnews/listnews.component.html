@@ -1,0 +1,26 @@
+<div class="container">
+
+  <table class="table table-striped">
+      <thead>
+          <th>Id</th>
+          <th>Placed At</th>
+          <th>Title</th>
+          <th>Small Text</th>
+          <th>Text</th>
+          <th>Operations</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let news of newss">
+              <td>{{news.id}}</td>
+              <td>{{news.placedAt}}</td>
+              <td>{{news.title}}</td>
+              <td>{{news.sumtext}}</td>
+              <td>{{news.bigtext}}</td>
+              <td><button class="btn btn-danger" (click)="deleteNews(news)">Delete</button>
+                  <button class="btn btn-primary" (click)="updateNews(news)">Edit</button></td>
+
+          </tr>
+      </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="newNews()">New News</button>
+</div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kids learning web-site</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container">
+    <nav>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+        </label>
+        <div class="logo">
+            <a href="/main">Balalar</a>
+        </div>
+        <div class="nav-wrapper">
+            <ul>
+                <li><a href="/main">Main</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/buys/current">Design</a></li>
+                <li><a href="/third">Our goal</a></li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<br>
+<br>
+<br>
+<h2 align="center">List of data in database</h2>
+
+<table align="center" cellspacing="10">
+    <tr>
+        <th>Id</th>
+        <th>CCvv</th>
+        <th>CCexpiration</th>
+        <th>CCnumber</th>
+        <th>The content</th>
+        <th>Name of author</th>
+        <th>published at</th>
+        <th>Summary of content</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr th:each="buy : ${buys}">
+        <td th:text="${buy.id}">Id</td>
+        <td th:text="${buy.ccCVV}">ccVV</td>
+        <td th:text="${buy.ccExpiration}">ccExpiration</td>
+        <td th:text="${buy.ccNumber}">ccNumber</td>
+        <td th:text="${buy.conte}">Content</td>
+        <td th:text="${buy.name}">Name</td>
+        <td th:text="${buy.placedAt}">Published at</td>
+        <td th:text="${buy.summary}">Summary</td>
+        <td><a th:href="@{/edit/{id} (id=${buy.id})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id} (id=${buy.id})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>

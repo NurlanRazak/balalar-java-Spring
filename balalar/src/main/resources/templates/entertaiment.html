@@ -1,0 +1,61 @@
+<!-- tag::all[] -->
+<!-- tag::head[] -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kids learning web-site</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+
+<body>
+<div class="container">
+    <nav>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+            <i></i>
+            <i></i>
+            <i></i>
+        </label>
+        <div class="logo">
+            <a href="/main">Balalar</a>
+        </div>
+        <div class="nav-wrapper">
+            <ul>
+                <li><a href="/main">Main</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/buys/current">Design</a></li>
+                <li><a href="/third">Our Goal</a></li>
+            </ul>
+            <form method="POST" th:action="@{/logout}">
+                <input type="submit" value="Logout"/>
+            </form>
+        </div>
+    </nav>
+</div>
+<!--&lt;!&ndash; tag::formTag[] &ndash;&gt;-->
+<form method="POST" th:object="${home}">
+    <!--&lt;!&ndash; end::all[] &ndash;&gt;-->
+
+    <span class="validationError"
+          th:if="${#fields.hasErrors('contents')}"
+          th:errors="*{contents}">Ingredient Error</span>
+
+    <div class="cont">
+
+
+        <div class="content-group" id="entertaiments">
+            <!-- tag::designateWrap[] -->
+            <h3>Choose your content:</h3>
+            <div th:each="content : ${entertaiment}">
+                <input name="contents" type="checkbox" th:value="${content.id}" />
+                <span th:text="${content.name}">Content</span><br/>
+            </div>
+            <!-- end::designateWrap[] -->
+        </div>
+
+
+    </div>
+</form>
+</body>
+</html>
